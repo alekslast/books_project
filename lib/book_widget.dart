@@ -1,6 +1,8 @@
 // This is the UI
 
 import 'package:flutter/material.dart';
+
+import 'add_book_screen.dart';
 import 'book_model.dart';
 
 class BookWidget extends StatelessWidget{
@@ -18,45 +20,38 @@ class BookWidget extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+    const backgroundImage = 'assets/images/bulgakov.jpg';
+    List<Book> bookList = [];
+
     return InkWell(
       onLongPress: onLongPress,
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 6),
-        child: Card(
-          elevation: 2,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    book.bookname,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+      // child: Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 6),
 
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                  child: Divider(
-                    thickness: 1,
-                  ),
-                ),
 
-                Text(
-                  book.author,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+      child: 
+      // AlertDialog(
+      //   content: AddBookScreen(
+      //     toCreate: (item) {
+      //       bookList.add(item);
+      //     },
+
+      //     toUpdate: (item) {},
+      //   ),
+
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(10),
+      //   ),
+      // ),
+
+      Container(
+        decoration: const BoxDecoration(
+          color: Colors.amber,
+          image: DecorationImage(
+            image: AssetImage(backgroundImage),
+            fit: BoxFit.fill,
           ),
         ),
       ),
